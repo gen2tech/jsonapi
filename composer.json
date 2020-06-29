@@ -1,0 +1,25 @@
+{
+  "name": "inf/json-fakedata",
+  "type": "library",
+  "description": "RestAPIData is a simple fake REST API for testing and prototyping.",
+  "keywords": ["php","router","route","simple","api","json"],
+  "homepage": "https://github.com/gen2wind/json-fakedata",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ogunyemi Oludayo",
+      "email": "ogunyemioludayo@gmail.com",
+      "homepage": "https://github.com/gen2wind"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+	"ext-sqlite3":"*"
+  },
+  "autoload": {
+    "psr-4": {
+  		"Inf\\": "router",
+  		"App\\": "app"
+  	}
+  }
+}
