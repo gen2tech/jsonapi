@@ -698,19 +698,5 @@
         "title": "enim repellat iste",
         "createdAt": "2020-06-26T06:37:23Z",
         "updatedAt": "2020-06-26T06:37:23Z"
-    },
-    {
-        "userId": 1,
-        "id": 102,
-        "title": "THis is the title",
-        "createdAt": "2020-06-29T16:03:58Z",
-        "updatedAt": "2020-06-29T16:03:58Z"
-    },
-    {
-        "userId": 1,
-        "id": 103,
-        "title": "Edit Title",
-        "createdAt": "2020-06-29T23:12:11Z",
-        "updatedAt": "2020-06-29T23:13:09Z"
     }
 ]

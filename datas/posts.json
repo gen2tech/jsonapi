@@ -798,21 +798,5 @@
         "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut",
         "createdAt": "2020-06-26T06:37:23Z",
         "updatedAt": "2020-06-26T06:37:23Z"
-    },
-    {
-        "userId": 1,
-        "id": 101,
-        "title": "THis is the title",
-        "body": "This is the bodys",
-        "createdAt": "2020-06-29T16:55:41Z",
-        "updatedAt": "2020-06-29T23:03:41Z"
-    },
-    {
-        "userId": 1,
-        "id": 103,
-        "title": "THis is the title",
-        "body": "This is the bodys",
-        "createdAt": "2020-06-29T23:04:44Z",
-        "updatedAt": "2020-06-29T23:04:59Z"
     }
 ]

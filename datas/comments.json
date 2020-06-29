@@ -4498,14 +4498,5 @@
         "body": "perspiciatis quis doloremque\nveniam nisi eos velit sed\nid totam inventore voluptatem laborum et eveniet\naut aut aut maxime quia temporibus ut omnis",
         "createdAt": "2020-06-26T06:37:23Z",
         "updatedAt": "2020-06-26T06:37:23Z"
-    },
-    {
-        "postId": 1,
-        "id": 501,
-        "name": "Comment2",
-        "email": "hello@mail.com",
-        "body": "This is comment body",
-        "createdAt": "2020-06-29T23:11:04Z",
-        "updatedAt": "2020-06-29T23:11:27Z"
     }
 ]

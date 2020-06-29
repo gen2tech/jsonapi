@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 require 'vendor/autoload.php';
 require 'config/config.php';
 use Inf\Router;
+use App\Helper;
 
 $router = new Router([
   'paths' => [
@@ -155,6 +156,7 @@ $router->delete('/photo/:id', 'Photos@deletePhoto');
 //   /user                                     // Add a user with parameter title, url and thumbnail
 //   /user                                    // Modify a user with parameter title, url and thumbnail and id
 //   /user/1                                   // Delete a user by id
+
 $router->get('/users/:string?', 'Users@listUsers');
 $router->get('/user/:id', 'Users@getUser');
 $router->get('/user_by_email/:any', 'Users@getUserByEmail');
@@ -164,6 +166,11 @@ $router->put('/user', 'Users@editUser');
 $router->delete('/user/:id', 'Users@deleteUser');
 
 
+// referesh all data from original file
+$router->get('/refresh_all', function(){
+    $helper = new Helper;
+    $helper->refreshAllDataFromOriginal();
+});
 
 
   $router->error(function() {

@@ -90,6 +90,53 @@ class Helper{
 		return $data;
 	}
 
+	public function getRecordById($type,$id){
+		if(!$this->isAcceptedType($type)){ return false; }
+		$object = $this->getRecordsFrom($type,false);
+		$data = [];
+		foreach($object AS $obj){
+			if($obj->id == $id){
+				$data = $obj;
+				break;
+			}
+		}
+		return $data;
+	}
+
+	public function getRecordBy($type,$key,$value){
+		if(!$this->isAcceptedType($type)){ return false; }
+		$object = $this->getRecordsFrom($type,false);
+		$data = [];
+		foreach($object AS $obj){
+			if($obj->{$key} == $value){
+				$data[] = $obj;
+			}
+		}
+		return $data;
+	}
+	
+	public function updateAllData($type=null, $data){
+		if(!$this->isAcceptedType($type)){ return false; }
+		$json = '';
+		if(is_array($data)){
+			$json = json_encode($data,JSON_PRETTY_PRINT);
+		}else if(is_string($data)){
+			$json = json_encode(json_decode($data),JSON_PRETTY_PRINT);
+		}else{
+			return false;
+		}
+		$jsonFile = ROOT."datas/$type.json";
+		if(!\file_exists($jsonFile)){
+			touch($jsonFile);
+		}
+		if(\file_put_contents($jsonFile,$json)){
+			return true;
+		}
+		return false;
+	}
+
+	
+
 	public function addRecordTo($type,array $data){
 		if(!$this->isAcceptedType($type)){ return false; }
 		$arrs = $this->getRecordsFrom($type,false);
@@ -140,64 +187,6 @@ class Helper{
 		unset($arrs[$delKey]);
 		return $this->updateAllData($type,array_values($arrs));
 	}
-
-	public function getRecordById($type,$id){
-		if(!$this->isAcceptedType($type)){ return false; }
-		$object = $this->getRecordsFrom($type,false);
-		$data = [];
-		foreach($object AS $obj){
-			if($obj->id == $id){
-				$data = $obj;
-				break;
-			}
-		}
-		return $data;
-	}
-
-	public function getRecordBy($type,$key,$value){
-		if(!$this->isAcceptedType($type)){ return false; }
-		$object = $this->getRecordsFrom($type,false);
-		$data = [];
-		foreach($object AS $obj){
-			if($obj->{$key} == $value){
-				$data[] = $obj;
-			}
-		}
-		return $data;
-	}
-	
-	public function updateAllData($type=null, $data){
-		if(!$this->isAcceptedType($type)){ return false; }
-		$json = '';
-		if(is_array($data)){
-			$json = json_encode($data,JSON_PRETTY_PRINT);
-		}else if(is_string($data)){
-			$json = json_encode(json_decode($data),JSON_PRETTY_PRINT);
-		}else{
-			return false;
-		}
-		$jsonFile = ROOT."datas/$type.json";
-		if(!\file_exists($jsonFile)){
-			touch($jsonFile);
-		}
-		if(\file_put_contents($jsonFile,$json)){
-			return true;
-		}
-		return false;
-	}
-
-	/* public function modifyPost(){
-		foreach($this->types AS $type){
-			$postData = $this->getOriginalData($type);
-			$posts =[];
-			foreach($postData AS $post){
-				$post->createdAt = date('Y-m-d\TH:i:s\Z', time());
-				$post->updatedAt = date('Y-m-d\TH:i:s\Z', time());
-				$posts[] = $post;
-			}
-			$this->updateOriginalData($type,$posts);
-		}
-	} */
 	
 	public function pa($data,$kill=false){
 		echo "<pre>";
@@ -207,108 +196,6 @@ class Helper{
 			die();
 		}
 	}
-
-	public function getBooks($page=null, $perPage=50,$addCharacters=false){
-		$endpont = 'books';
-		if(!empty($page)){
-			$endpont .= "?page=$page&pageSize=$perPage";
-		}else{
-			$endpont .= "?pageSize=$perPage";
-		}
-		$list = $this->getApiData($endpont);
-
-		$data = [];
-		foreach($list AS $book){
-			$date = new \DateTime($book['released']);
-			$date->setTimezone(new \DateTimeZone('Africa/Lagos')); // +01
-			$released = $date->format('Y-m-d H:i:s'); // 2012-07-15 05:00:00 
-			$key = strtotime($released);
-
-			$data[$key]['released'] = $released;
-
-			$urlArr = explode('/',$book['url']);
-			$bookId = end($urlArr); 
-			$data[$key]['id'] = $bookId;
-			$data[$key]['name'] = $book['name'];
-			$data[$key]['authors'] = $book['authors'];
-			$data[$key]['isbn'] = $book['isbn'];
-			$data[$key]['numberOfPages'] = $book['numberOfPages'];
-			$data[$key]['publisher'] = $book['publisher'];
-			$data[$key]['country'] = $book['country'];
-			$data[$key]['mediaType'] = $book['mediaType'];
-			$data[$key]['comments_count'] = $this->getBookCommentCount($bookId);
-			if(True === $addCharacters){
-				$data[$key]['characters'] = $book['characters'];
-			}
-			 
-		}
-
-		krsort($data);
-
-		//return $list;
-		return array_values($data);
-	}
-
-
-	public function getBook($bookId, $addCharacters=false){
-		$book = $this->getApiData('books/'.$bookId);
-
-		$date = new \DateTime($book['released']);
-		$date->setTimezone(new \DateTimeZone('Africa/Lagos')); // +01
-		$released = $date->format('Y-m-d H:i:s'); // 2012-07-15 05:00:00
-
-		$data['released'] = $released;
-
-		$urlArr = explode('/',$book['url']);
-		$bookId = end($urlArr); 
-		$data['id'] = $bookId;
-		$data['name'] = $book['name'];
-		$data['authors'] = $book['authors'];
-		$data['isbn'] = $book['isbn'];
-		$data['numberOfPages'] = $book['numberOfPages'];
-		$data['publisher'] = $book['publisher'];
-		$data['country'] = $book['country'];
-		$data['mediaType'] = $book['mediaType'];
-		if(True === $addCharacters){
-			$data['characters'] = $book['characters'];
-		}
-		$data['comments_count'] = $this->getBookCommentCount($bookId);
-		//$data['comments'] = $this->getComments($bookId);
-		return $data;
-	}
-
-
-	
-
-
-	public function getCharacters($page=null, $perPage=50){
-		$endpont = 'characters';
-		if(!empty($page)){
-			$endpont .= "?page=$page&pageSize=$perPage";
-		}else{
-			$endpont .= "?pageSize=$perPage";
-		}
-		$list = $this->getApiData($endpont);
-		
-		$info = $data = [];
-		$info['character_count'] = count($list);
-		foreach($list AS $character){
-			$urlArr = explode('/',$character['url']);
-			$characterId = end($urlArr); 
-			$char['id'] = $characterId;
-			$char['name'] = $character['name'];
-			$char['age'] = $character['born'];
-			$char['gender'] = $character['gender'];
-			$data[] = $char;
-		}
-		$info['characters'] = $data;
-		//return $list;
-		return $info;
-	}
-
-
-
-
 	public function arrayFilterByValue($array, $index, $value)
     { 
 		$new_array = [];
@@ -325,16 +212,4 @@ class Helper{
           } 
       return $new_array; 
 	} 
-	
-
-	
-
-	public function getBookCommentCount($bookId){
-		$sql = "SELECT COUNT(*) AS `count` FROM `comments` WHERE `book_id` =  $bookId ORDER BY `date` DESC ";
-		$data = $this->db->fetchOneRow($sql);
-		return $data['count'];
-	}
-
-
-
 }

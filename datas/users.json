@@ -201,28 +201,28 @@
     },
     {
         "id": 9,
-        "name": "John Doe",
-        "username": "johndi",
-        "email": "johndi@mail.com",
+        "name": "Glenna Reichert",
+        "username": "Delphine",
+        "email": "Chaim_McDermott@dana.io",
         "address": {
-            "street": "11396, Calico Road",
-            "suite": "Apt 409 ",
-            "city": "Fletcher",
-            "zipcode": "63030-1114",
+            "street": "Dayna Park",
+            "suite": "Suite 449",
+            "city": "Bartholomebury",
+            "zipcode": "76495-3109",
             "geo": {
-                "lat": "38.1370278",
-                "lng": "-90.7670892"
+                "lat": "24.6463",
+                "lng": "-168.8889"
             }
         },
-        "phone": "098765467899",
-        "website": "http:\/\/www.johndi.com",
+        "phone": "(775)976-6794 x41206",
+        "website": "conrad.com",
         "company": {
-            "name": "JohnDI INC",
-            "catchPhrase": "Multi-layered client-server neural-net",
-            "bs": "harness real-time e-markets"
+            "name": "Yost and Sons",
+            "catchPhrase": "Switchable contextually-based project",
+            "bs": "aggregate real-time technologies"
         },
         "createdAt": "2020-06-26T06:37:24Z",
-        "updatedAt": "2020-06-29T23:24:30Z"
+        "updatedAt": "2020-06-26T06:37:24Z"
     },
     {
         "id": 10,
@@ -248,80 +248,5 @@
         },
         "createdAt": "2020-06-26T06:37:24Z",
         "updatedAt": "2020-06-26T06:37:24Z"
-    },
-    {
-        "id": 11,
-        "name": "John Doe",
-        "username": "johndi",
-        "email": "johndi@mail.com",
-        "address": {
-            "street": "11396, Calico Road",
-            "suite": "Apt 409 ",
-            "city": "Fletcher",
-            "zipcode": "63030-1114",
-            "geo": {
-                "lat": "38.1370278",
-                "lng": "-90.7670892"
-            }
-        },
-        "phone": "098765467899",
-        "website": "http:\/\/www.johndi.com",
-        "company": {
-            "name": "JohnDI INC",
-            "catchPhrase": "Multi-layered client-server neural-net",
-            "bs": "harness real-time e-markets"
-        },
-        "createdAt": "2020-06-29T15:42:53Z",
-        "updatedAt": "2020-06-29T23:20:04Z"
-    },
-    {
-        "id": 12,
-        "name": "John Doe",
-        "username": "johndi",
-        "email": "johndi@mail.com",
-        "address": {
-            "street": "11396, Calico Road",
-            "suite": "Apt 409 ",
-            "city": "Fletcher",
-            "zipcode": "63030-1114",
-            "geo": {
-                "lat": "38.1370278",
-                "lng": "-90.7670892"
-            }
-        },
-        "phone": "098765467899",
-        "website": "http:\/\/www.johndi.com",
-        "company": {
-            "name": "JohnDI INC",
-            "catchPhrase": "Multi-layered client-server neural-net",
-            "bs": "harness real-time e-markets"
-        },
-        "createdAt": "2020-06-29T16:05:35Z",
-        "updatedAt": "2020-06-29T23:20:44Z"
-    },
-    {
-        "id": 13,
-        "name": "John Doe",
-        "username": "johndi",
-        "email": "johndi@mail.com",
-        "address": {
-            "street": "11396, Calico Road",
-            "suite": "Apt 409",
-            "city": "Fletcher",
-            "zipcode": "63030-1114",
-            "geo": {
-                "lat": "38.1370278",
-                "lng": "-90.7670892"
-            }
-        },
-        "phone": "098765467899",
-        "website": "http:\/\/www.johndi.com",
-        "company": {
-            "name": "JohnDI INC",
-            "catchPhrase": "Multi-layered client-server neural-net",
-            "bs": "harness real-time e-markets"
-        },
-        "createdAt": "2020-06-29T23:18:31Z",
-        "updatedAt": "2020-06-29T23:18:31Z"
     }
 ]

@@ -44998,41 +44998,5 @@
         "thumbnail": "https:\/\/via.placeholder.com\/150\/6dd9cb",
         "createdAt": "2020-06-26T06:37:23Z",
         "updatedAt": "2020-06-26T06:37:23Z"
-    },
-    {
-        "albumId": 1,
-        "id": 5002,
-        "title": "THis is the title",
-        "url": "photo Url",
-        "thumbnail": "photo thumbnail",
-        "createdAt": "2020-06-29T15:42:52Z",
-        "updatedAt": "2020-06-29T15:42:52Z"
-    },
-    {
-        "albumId": 1,
-        "id": 5003,
-        "title": "THis is the title",
-        "url": "photo Url",
-        "thumbnail": "photo thumbnail",
-        "createdAt": "2020-06-29T16:05:02Z",
-        "updatedAt": "2020-06-29T16:05:02Z"
-    },
-    {
-        "albumId": 1,
-        "id": 5004,
-        "title": "THis is the title",
-        "url": "photo Url",
-        "thumbnail": "photo thumbnail",
-        "createdAt": "2020-06-29T23:14:30Z",
-        "updatedAt": "2020-06-29T23:14:30Z"
-    },
-    {
-        "albumId": 1,
-        "id": 5005,
-        "title": "THis is the title",
-        "url": "https:\/\/via.placeholder.com\/600\/6dd9cb",
-        "thumbnail": "https:\/\/via.placeholder.com\/150\/6dd9cb",
-        "createdAt": "2020-06-29T23:16:58Z",
-        "updatedAt": "2020-06-29T23:18:10Z"
     }
 ]

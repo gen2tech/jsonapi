@@ -1598,29 +1598,5 @@
         "completed": false,
         "createdAt": "2020-06-26T06:37:24Z",
         "updatedAt": "2020-06-26T06:37:24Z"
-    },
-    {
-        "userId": 1,
-        "id": 202,
-        "title": "THis is the title",
-        "completed": true,
-        "createdAt": "2020-06-29T15:42:50Z",
-        "updatedAt": "2020-06-29T15:42:50Z"
-    },
-    {
-        "userId": 1,
-        "id": 203,
-        "title": "THis is the title",
-        "completed": true,
-        "createdAt": "2020-06-29T16:04:30Z",
-        "updatedAt": "2020-06-29T16:04:30Z"
-    },
-    {
-        "userId": 1,
-        "id": 204,
-        "title": "Edit Title",
-        "completed": false,
-        "createdAt": "2020-06-29T23:13:35Z",
-        "updatedAt": "2020-06-29T23:14:09Z"
     }
 ]
